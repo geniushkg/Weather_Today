@@ -48,9 +48,15 @@ public class MainActivityFragment extends Fragment {
                 Arrays.asList(forecastArray));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity()
                 ,R.layout.list_item_forecast,R.id.list_item_forecast_textview,weekForecast);
-
         lv.setAdapter(adapter);
         return v;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+
     }
 
     public class fetchWeatherTask extends AsyncTask{
